@@ -1,4 +1,4 @@
-package com.myproject.barbershop.model;
+package com.myproject.barbershop.people.model;
 
 public enum CategoryPeople {
     EMPLOYEE,

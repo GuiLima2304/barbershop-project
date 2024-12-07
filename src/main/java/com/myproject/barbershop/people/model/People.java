@@ -1,5 +1,6 @@
-package com.myproject.barbershop.model;
+package com.myproject.barbershop.people.model;
 
+import com.myproject.barbershop.people.model.CategoryPeople;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
