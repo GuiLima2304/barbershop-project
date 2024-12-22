@@ -22,6 +22,7 @@ public class EmployeeController {
     @Autowired
     private EmployeeService employeeService;
 
+
     @GetMapping("/getAll")
     public ResponseEntity<List<EmployeeDTO>> getAllPeople() {
         List<EmployeeDTO> peopleDTO = this.employeeService.getAllEmployees();

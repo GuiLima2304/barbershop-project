@@ -1,6 +1,6 @@
 package com.myproject.barbershop.scheduling.model;
 
-import com.myproject.barbershop.people.model.Client;
+import com.myproject.barbershop.client.model.Client;
 import com.myproject.barbershop.employee.model.Employee;
 import jakarta.persistence.*;
 import lombok.*;

@@ -4,6 +4,7 @@ import com.myproject.barbershop.employee.dto.CreateEmployeeDTO;
 import com.myproject.barbershop.employee.dto.EmployeeDTO;
 import com.myproject.barbershop.employee.model.Employee;
 import com.myproject.barbershop.employee.repository.EmployeeRepository;
+import com.myproject.barbershop.people.repository.PeopleRepository;
 import com.myproject.barbershop.shared.exception.ValidationException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -18,13 +19,18 @@ public class EmployeeService {
 
     @Autowired
     private EmployeeRepository employeeRepository;
+
+    @Autowired
+    private PeopleRepository peopleRepository;
+
     public List<EmployeeDTO> getAllEmployees() {
         return this.employeeRepository.findAll().stream().map(EmployeeDTO::new).collect(Collectors.toList());
     }
 
     @Transactional
     public ResponseEntity createEmployee(CreateEmployeeDTO requestBody) {
-        if(employeeRepository.existsByCpf(requestBody.cpf())) {
+
+        if(peopleRepository.existsByCpf(requestBody.cpf())) {
             throw new ValidationException("Funcionário ja existente");
         }
 
