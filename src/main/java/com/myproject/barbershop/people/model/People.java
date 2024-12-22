@@ -13,13 +13,15 @@ import lombok.Setter;
 @AllArgsConstructor
 @Entity
 @Table(name = "people")
+@Inheritance(strategy = InheritanceType.JOINED)
 public abstract class People {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String name;
-    private String CPF;
+    private String cpf;
     private CategoryPeople categoryPeople;
+
 
 }
