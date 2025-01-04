@@ -1,6 +1,6 @@
 package com.myproject.barbershop.scheduling.model;
 
-public enum CategoryService {
+public enum TypeServiceEnum {
     CUT,
     BEARD
 }
